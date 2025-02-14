@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine untuk ❤️ [Nama Pacar] ❤️</title>
+    <style>
+        body {
+            background: #ff99cc;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            padding: 50px 20px;
+        }
+
+        h1 {
+            color: #cc0066;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .heart {
+            font-size: 100px;
+            animation: pulse 1s infinite;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        .message {
+            background: white;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .love-letter {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #333;
+            text-align: left;
+            display: none;
+        }
+
+        button {
+            background: #cc0066;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin: 20px;
+            transition: transform 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        .photo-container {
+            margin: 30px auto;
+            max-width: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .couple-photo {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .photo-frame {
+            position: relative;
+            padding: 15px;
+            background: white;
+            border-radius: 15px;
+            margin: 20px auto;
+        }
+
+        .polaroid-effect {
+            background: white;
+            padding: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transform: rotate(-2deg);
+        }
+
+        .polaroid-caption {
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .hearts {
+            position: fixed;
+            top: -20px;
+            animation: fall 3s linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Valentine's Day!</h1>
+        <h2>For Regina Prianka Putri my love</h2>
+        
+        <div class="heart" onclick="showLetter()">❤️</div>
+        
+        <div class="message">
+            <button onclick="showLetter()">Buka suratnya dong</button>
+            <div class="love-letter" id="letter">
+                <p>Dear Regie,</p>
+                <p>Di hari Valentine ini, aku mau ucapin valentine ke kamu sayangggg.</p>
+                <p>Semoga kita bisa terus bersama ya sayang, aku tau kalo kita ga akan bisa sampe selamanyaa. tapi seenggaknya kita buat kenangan indahh sayangg sampe waktunya tiba hehehe. makasih di 2024 kemarinn udah nemenin aku dari pertengahan tahun sampai hari ini kamu masih sama aku meskipun kamu kayak anak kecil, banyak ngambeknya terus banyak tingkahnya, suka ngomong kasar, blak blakan, tapi aku suka sama sifat kamu itu sayang. itu yang bikin aku nyaman sama kamu terus. Semoga 2025 ini kita terus bersama sampe 100 tahun lagi ya sayangg. I love u my sweetheart baby girllll.</p>
+                <p>Best Regards,<br>Jason</p>
+
+                <div class="photo-container">
+                    <img src="valentine/2.jpeg" 
+                         alt="Our Memory" 
+                         class="couple-photo"
+                         loading="lazy">
+                </div>
+        
+                <div class="photo-frame">
+                    <div class="polaroid-effect">
+                        <img src="valentine/1.jpeg" 
+                             alt="Our Love" 
+                             class="couple-photo"
+                             loading="lazy">
+                        <p class="polaroid-caption">Kita Selamanya ❤️</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="hearts-container"></div>
+    </div>
+
+    <script>
+        function showLetter() {
+            document.getElementById('letter').style.display = 'block';
+            document.querySelector('button').style.display = 'none';
+            createHearts();
+        }
+
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            for (let i = 0; i < 50; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'hearts';
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDelay = Math.random() * 2 + 's';
+                container.appendChild(heart);
+            }
+        }
+    </script>
+</body>
+</html>
